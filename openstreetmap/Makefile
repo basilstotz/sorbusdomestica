@@ -5,3 +5,6 @@ all:
 
 clean:
 	@rm ./sorbusdomestica.*
+
+install:
+	@./bin/prereqs.sh
