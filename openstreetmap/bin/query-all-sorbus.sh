@@ -36,13 +36,14 @@ done
 
 geojson-merge $CACHE_DIR/sorbus*.json | node ./bin/update-meta.js > sorbusdomestica.geojson
 
+DEST="./datasette"
 
-cat sorbusdomestica.geojson | node ./bin/prepare-datasette.js > sorbusdomestica.json
+cat sorbusdomestica.geojson | node ./bin/prepare-datasette.js > $DEST/sorbusdomestica.json
 
 #test -f sorbusdomestica.sqlite && rm sorbusdomestica.sqlite
-sqlite-utils insert sorbusdomestica.sqlite trees sorbusdomestica.json --pk=id --alter  --truncate
+sqlite-utils insert $DEST/sorbusdomestica.sqlite trees $DEST/sorbusdomestica.json --pk=id --alter  --truncate
 
-sqlite-utils  rows --csv sorbusdomestica.sqlite trees > sorbusdomestica.csv
+sqlite-utils  rows --csv $DEST/sorbusdomestica.sqlite trees > $DEST/sorbusdomestica.csv
 
 
 
