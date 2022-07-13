@@ -20,26 +20,12 @@ EOF
 
 fi
 
-fi
-
 cd
 npm install query-overpass
 npm install @mapbox/geojson-merge
 
-#if test -z "$(which pip3)";then
-#   sudo apt install python3-pip
-#fi
 
-#some tools
-pip install sqlite-utils
-pip install geojson-to-sqlite
+fi
 
-
-#datasette
-pip install datasette
-#pip install datasette-render-images
-datasette install datasette-geojson-map
-datasette install datasette-cluster-map
-datasette install datasette-leaflet-geojson
 
 
