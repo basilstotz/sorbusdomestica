@@ -18647,7 +18647,8 @@
     "longitude": 7.5638172,
     "latitude": 47.4606122,
     "elevation": 501,
-    "note": "data: July 2022",
+    "circumference": "0.12",
+    "note": "data: July 2022, abgestorben",
     "osm": "https://www.openstreetmap.org/?mlat=47.4606122&mlon=7.5638172#map=17/47.4606122/7.5638172",
     "geometry": {
       "type": "Point",
@@ -18667,7 +18668,7 @@
     "longitude": 7.5658107,
     "latitude": 47.4650351,
     "elevation": 407,
-    "note": "data: July 2022",
+    "note": "data: July 2022, fraglich,   nachprüfen",
     "osm": "https://www.openstreetmap.org/?mlat=47.4650351&mlon=7.5658107#map=17/47.4650351/7.5658107",
     "geometry": {
       "type": "Point",
@@ -18687,6 +18688,7 @@
     "longitude": 7.5664265,
     "latitude": 47.4637347,
     "elevation": 453,
+    "circumference": "0.16",
     "note": "data: July 2022",
     "osm": "https://www.openstreetmap.org/?mlat=47.4637347&mlon=7.5664265#map=17/47.4637347/7.5664265",
     "geometry": {
@@ -18820,6 +18822,26 @@
         7.6298803,
         47.5003915,
         496
+      ]
+    }
+  },
+  {
+    "id": "9886714103",
+    "user": "martindick56",
+    "country": "Schweiz/Suisse/Svizzera/Svizra",
+    "state": "Basel-Landschaft",
+    "county": "Bezirk Arlesheim",
+    "longitude": 7.5651243,
+    "latitude": 47.4645346,
+    "elevation": 453,
+    "note": "data: July 2022",
+    "osm": "https://www.openstreetmap.org/?mlat=47.4645346&mlon=7.5651243#map=17/47.4645346/7.5651243",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        7.5651243,
+        47.4645346,
+        453
       ]
     }
   },

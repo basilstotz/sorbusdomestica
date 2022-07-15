@@ -37906,18 +37906,19 @@
         "type": "node",
         "id": "9865548515",
         "tags": {
+          "circumference": "0.12",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "note": "data: July 2022",
+          "note": "data: July 2022, abgestorben",
           "species": "Sorbus domestica",
           "species:de": "Speierling"
         },
         "relations": [],
         "meta": {
-          "timestamp": "2022-07-04T10:36:10Z",
-          "version": "2",
-          "changeset": "123184093",
+          "timestamp": "2022-07-14T07:55:38Z",
+          "version": "3",
+          "changeset": "123595215",
           "user": "martindick56",
           "uid": "2814669"
         },
@@ -37950,15 +37951,15 @@
         "tags": {
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "note": "data: July 2022",
+          "note": "data: July 2022, fraglich,   nachprüfen",
           "species": "Sorbus domestica",
           "species:de": "Speierling"
         },
         "relations": [],
         "meta": {
-          "timestamp": "2022-07-04T13:28:42Z",
-          "version": "1",
-          "changeset": "123192251",
+          "timestamp": "2022-07-14T08:38:05Z",
+          "version": "2",
+          "changeset": "123597068",
           "user": "martindick56",
           "uid": "2814669"
         },
@@ -37989,6 +37990,7 @@
         "type": "node",
         "id": "9867755315",
         "tags": {
+          "circumference": "0.16",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
@@ -37998,9 +38000,9 @@
         },
         "relations": [],
         "meta": {
-          "timestamp": "2022-07-05T09:30:30Z",
-          "version": "1",
-          "changeset": "123225566",
+          "timestamp": "2022-07-14T08:48:23Z",
+          "version": "2",
+          "changeset": "123597536",
           "user": "martindick56",
           "uid": "2814669"
         },
@@ -38276,6 +38278,49 @@
           7.6298803,
           47.5003915,
           496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/9886714103",
+      "properties": {
+        "type": "node",
+        "id": "9886714103",
+        "tags": {
+          "cirumference": "0.22",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "note": "data: July 2022",
+          "species": "Sorbus domestica",
+          "species:de": "Speierling"
+        },
+        "relations": [],
+        "meta": {
+          "timestamp": "2022-07-14T08:40:14Z",
+          "version": "1",
+          "changeset": "123597160",
+          "user": "martindick56",
+          "uid": "2814669"
+        },
+        "nominatim": {
+          "address": {
+            "county": "Bezirk Arlesheim",
+            "state": "Basel-Landschaft",
+            "ISO3166-2-lvl4": "CH-BL",
+            "country": "Schweiz/Suisse/Svizzera/Svizra",
+            "country_code": "ch"
+          },
+          "display_name": "Bezirk Arlesheim, Basel-Landschaft, Schweiz/Suisse/Svizzera/Svizra"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5651243,
+          47.4645346,
+          453
         ]
       }
     },

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd $(dirname $0)/../.
+
 CACHE_DIR="./cache"
 mkdir -p $CACHE_DIR
 
