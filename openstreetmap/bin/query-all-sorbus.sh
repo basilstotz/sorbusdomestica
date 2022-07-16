@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -eu
+
 cd $(dirname $0)/../.
 
 CACHE_DIR="./cache"
@@ -36,7 +38,8 @@ for O in $(seq 0 8); do
     done
 done
 
-geojson-merge $CACHE_DIR/sorbus*.json | node ./bin/update-meta.js > sorbusdomestica.geojson
+geojson-merge $CACHE_DIR/sorbus*.json | node ./bin/update-meta.js > sorbusdomestica.geojson.tmp
 
+mv sorbusdomestica.geojson.tmp sorbusdomestica.geojson
 
 exit 0
