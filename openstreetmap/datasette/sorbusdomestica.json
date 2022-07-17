@@ -8609,6 +8609,7 @@
     "longitude": 8.2737225,
     "latitude": 47.5737777,
     "elevation": 476,
+    "circumference": "0.44",
     "note": "data: August 2021",
     "osm": "https://www.openstreetmap.org/?mlat=47.5737777&mlon=8.2737225#map=17/47.5737777/8.2737225",
     "geometry": {
@@ -9703,7 +9704,8 @@
     "longitude": 8.331883,
     "latitude": 47.3324462,
     "elevation": 447,
-    "note": "data:",
+    "circumference": "0.38",
+    "note": "data: July 2015",
     "osm": "https://www.openstreetmap.org/?mlat=47.3324462&mlon=8.331883#map=17/47.3324462/8.331883",
     "geometry": {
       "type": "Point",
@@ -9765,6 +9767,7 @@
     "longitude": 7.9815115,
     "latitude": 47.5255292,
     "elevation": 444,
+    "circumference": "0.2",
     "note": "data:",
     "osm": "https://www.openstreetmap.org/?mlat=47.5255292&mlon=7.9815115#map=17/47.5255292/7.9815115",
     "geometry": {
@@ -18668,7 +18671,8 @@
     "longitude": 7.5658107,
     "latitude": 47.4650351,
     "elevation": 407,
-    "note": "data: July 2022, fraglich,   nachprüfen",
+    "circumference": "0.12",
+    "note": "data: July 2022",
     "osm": "https://www.openstreetmap.org/?mlat=47.4650351&mlon=7.5658107#map=17/47.4650351/7.5658107",
     "geometry": {
       "type": "Point",
@@ -18827,13 +18831,14 @@
   },
   {
     "id": "9886714103",
-    "user": "martindick56",
+    "user": "ChrissW-R1",
     "country": "Schweiz/Suisse/Svizzera/Svizra",
     "state": "Basel-Landschaft",
     "county": "Bezirk Arlesheim",
     "longitude": 7.5651243,
     "latitude": 47.4645346,
     "elevation": 453,
+    "circumference": "0.22",
     "note": "data: July 2022",
     "osm": "https://www.openstreetmap.org/?mlat=47.4645346&mlon=7.5651243#map=17/47.4645346/7.5651243",
     "geometry": {
@@ -18842,6 +18847,48 @@
         7.5651243,
         47.4645346,
         453
+      ]
+    }
+  },
+  {
+    "id": "9890570461",
+    "user": "martindick56",
+    "country": "Schweiz/Suisse/Svizzera/Svizra",
+    "state": "Basel-Landschaft",
+    "county": "Bezirk Arlesheim",
+    "longitude": 7.5572802,
+    "latitude": 47.489449,
+    "elevation": 725.988037109375,
+    "circumference": "0.85",
+    "note": "data: July 2022",
+    "osm": "https://www.openstreetmap.org/?mlat=47.489449&mlon=7.5572802#map=17/47.489449/7.5572802",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        7.5572802,
+        47.489449,
+        725.988037109375
+      ]
+    }
+  },
+  {
+    "id": "9890651153",
+    "user": "martindick56",
+    "country": "Schweiz/Suisse/Svizzera/Svizra",
+    "state": "Solothurn",
+    "county": "Amtei Dorneck-Thierstein",
+    "longitude": 7.4421868,
+    "latitude": 47.482682,
+    "elevation": 708.1817016601562,
+    "circumference": "0.50",
+    "note": "data: July 2022",
+    "osm": "https://www.openstreetmap.org/?mlat=47.482682&mlon=7.4421868#map=17/47.482682/7.4421868",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        7.4421868,
+        47.482682,
+        708.1817016601562
       ]
     }
   },

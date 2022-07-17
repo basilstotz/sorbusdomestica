@@ -1,4 +1,6 @@
 
+daten: sorbusdomestica.sqlite
+
 start:  daten
 	@./bin/install-datasette.sh
 	@datasette serve sorbusdomestica.sqlite &
@@ -6,7 +8,6 @@ start:  daten
 stop:
 	@pkill datasette
 
-daten: sorbusdomestica.sqlite
 
 sorbusdomestica.sqlite: ../sorbusdomestica.geojson ./bin/prepare-datasette.js
 	@echo "update datenfiles"

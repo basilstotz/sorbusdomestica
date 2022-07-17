@@ -17473,6 +17473,7 @@
         "type": "node",
         "id": "9048983632",
         "tags": {
+          "circumference": "0.44",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
@@ -17482,9 +17483,9 @@
         },
         "relations": [],
         "meta": {
-          "timestamp": "2021-08-30T19:14:21Z",
-          "version": "1",
-          "changeset": "110476875",
+          "timestamp": "2022-07-15T14:18:47Z",
+          "version": "2",
+          "changeset": "123656118",
           "user": "martindick56",
           "uid": "2814669"
         },
@@ -19679,18 +19680,19 @@
         "type": "node",
         "id": "9124353826",
         "tags": {
+          "circumference": "0.38",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "note": "data:",
+          "note": "data: July 2015",
           "species": "Sorbus domestica",
           "species:de": "Speierling"
         },
         "relations": [],
         "meta": {
-          "timestamp": "2021-09-26T14:33:24Z",
-          "version": "2",
-          "changeset": "111725348",
+          "timestamp": "2022-07-15T13:58:48Z",
+          "version": "4",
+          "changeset": "123655379",
           "user": "martindick56",
           "uid": "2814669"
         },
@@ -19804,6 +19806,7 @@
         "type": "node",
         "id": "9124441956",
         "tags": {
+          "circumference": "0.2",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
@@ -19813,9 +19816,9 @@
         },
         "relations": [],
         "meta": {
-          "timestamp": "2021-09-26T16:13:17Z",
-          "version": "3",
-          "changeset": "111729689",
+          "timestamp": "2022-07-15T14:44:25Z",
+          "version": "4",
+          "changeset": "123657183",
           "user": "martindick56",
           "uid": "2814669"
         },
@@ -37949,17 +37952,19 @@
         "type": "node",
         "id": "9865918069",
         "tags": {
+          "circumference": "0.12",
+          "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
-          "note": "data: July 2022, fraglich,   nachprüfen",
+          "note": "data: July 2022",
           "species": "Sorbus domestica",
           "species:de": "Speierling"
         },
         "relations": [],
         "meta": {
-          "timestamp": "2022-07-14T08:38:05Z",
-          "version": "2",
-          "changeset": "123597068",
+          "timestamp": "2022-07-15T21:06:36Z",
+          "version": "3",
+          "changeset": "123669419",
           "user": "martindick56",
           "uid": "2814669"
         },
@@ -38288,7 +38293,7 @@
         "type": "node",
         "id": "9886714103",
         "tags": {
-          "cirumference": "0.22",
+          "circumference": "0.22",
           "leaf_cycle": "deciduous",
           "leaf_type": "broadleaved",
           "natural": "tree",
@@ -38298,11 +38303,11 @@
         },
         "relations": [],
         "meta": {
-          "timestamp": "2022-07-14T08:40:14Z",
-          "version": "1",
-          "changeset": "123597160",
-          "user": "martindick56",
-          "uid": "2814669"
+          "timestamp": "2022-07-15T18:50:52Z",
+          "version": "2",
+          "changeset": "123665443",
+          "user": "ChrissW-R1",
+          "uid": "251543"
         },
         "nominatim": {
           "address": {
@@ -38321,6 +38326,92 @@
           7.5651243,
           47.4645346,
           453
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/9890570461",
+      "properties": {
+        "type": "node",
+        "id": "9890570461",
+        "tags": {
+          "circumference": "0.85",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "note": "data: July 2022",
+          "species": "Sorbus domestica",
+          "species:de": "Speierling"
+        },
+        "relations": [],
+        "meta": {
+          "timestamp": "2022-07-15T20:43:39Z",
+          "version": "3",
+          "changeset": "123668864",
+          "user": "martindick56",
+          "uid": "2814669"
+        },
+        "nominatim": {
+          "address": {
+            "county": "Bezirk Arlesheim",
+            "state": "Basel-Landschaft",
+            "ISO3166-2-lvl4": "CH-BL",
+            "country": "Schweiz/Suisse/Svizzera/Svizra",
+            "country_code": "ch"
+          },
+          "display_name": "Bezirk Arlesheim, Basel-Landschaft, Schweiz/Suisse/Svizzera/Svizra"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5572802,
+          47.489449,
+          725.988037109375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/9890651153",
+      "properties": {
+        "type": "node",
+        "id": "9890651153",
+        "tags": {
+          "circumference": "0.50",
+          "leaf_cycle": "deciduous",
+          "leaf_type": "broadleaved",
+          "natural": "tree",
+          "note": "data: July 2022",
+          "species": "Sorbus domestica",
+          "species:de": "Speierling"
+        },
+        "relations": [],
+        "meta": {
+          "timestamp": "2022-07-15T21:27:13Z",
+          "version": "1",
+          "changeset": "123669848",
+          "user": "martindick56",
+          "uid": "2814669"
+        },
+        "nominatim": {
+          "address": {
+            "county": "Amtei Dorneck-Thierstein",
+            "state": "Solothurn",
+            "ISO3166-2-lvl4": "CH-SO",
+            "country": "Schweiz/Suisse/Svizzera/Svizra",
+            "country_code": "ch"
+          },
+          "display_name": "Amtei Dorneck-Thierstein, Solothurn, Schweiz/Suisse/Svizzera/Svizra"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4421868,
+          47.482682,
+          708.1817016601562
         ]
       }
     },

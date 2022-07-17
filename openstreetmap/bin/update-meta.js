@@ -40,17 +40,33 @@ function addMeta(geodata){
 	    
 	    changed=true;
 	    process.stderr.write('add id: '+id+'\n');
-	  
+
+	    var res;
+	    
 	    let latitude=item.geometry.coordinates[1];
   	    let longitude=item.geometry.coordinates[0];
 	    //elevation
-	    let ans=execSync('curl -s https://api.open-elevation.com/api/v1/lookup?locations='+latitude+','+longitude);
-	    let res=JSON.parse(ans);
-	    let elevation=res.results[0].elevation;
+	    try{
+		let url='curl -s https://api.opentopodata.org/v1/test-dataset?locations=';
+		//let url='curl -s https://api.open-elevation.com/api/v1/lookup?locations=';
+	        let ans=execSync(url+latitude+','+longitude);
+		res=JSON.parse(ans);
+	    }
+	    catch { process.stderr.write('lookup elevation failed\n'); }
+		    
+	    let elevation;
+	    if(res.results[0].elevation){
+		elevation=res.results[0].elevation;
+	    }else{
+		elevation=null;
+	    }
             //nominatim
-	    ans=execSync('curl -s  "https://nominatim.openstreetmap.org/reverse?format=json&lat='+latitude+'&lon='+longitude+'&zoom=8"');
-	    res=JSON.parse(ans);
-         
+	    res={};
+	    try{
+		ans=execSync('curl -s  "https://nominatim.openstreetmap.org/reverse?format=json&lat='+latitude+'&lon='+longitude+'&zoom=8"');
+		res=JSON.parse(ans);
+            }
+	    catch { process.stderr.write('lookup nominatim failed\n'); }	    
 	    addons[id]={ nominatim: { address: res.address, display_name: res.display_name }, elevation: elevation };
 	}
 
