@@ -69,7 +69,7 @@ function addMeta(geodata){
 	
 	let query="select id, latitude, longitude, (longitude - :lon)*(longitude - :lon)+(latitude - :lat)*(latitude - :lat) as dist from trees where dist != 'null' and dist >= 0.0  order by dist limit 1"
 	
-        let cmd='sqlite-utils query openstreetmap/datasette/sorbusdomestica.sqlite \"'+query+'\" -p lon '+laenge+' -p lat '+breite;
+        let cmd='sqlite-utils query ./../openstreetmap/datasette/sorbusdomestica.sqlite \"'+query+'\" -p lon '+laenge+' -p lat '+breite;
 
 	let dist;
 	
