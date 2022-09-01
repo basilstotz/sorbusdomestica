@@ -47,8 +47,8 @@ function addMeta(geodata){
   	    let longitude=item.geometry.coordinates[0];
 	    //elevation
 	    try{
-		let url='curl -s https://api.opentopodata.org/v1/test-dataset?locations=';
-		//let url='curl -s https://api.open-elevation.com/api/v1/lookup?locations=';
+		//let url='curl -s https://api.opentopodata.org/v1/test-dataset?locations=';
+		let url='curl -s https://api.open-elevation.com/api/v1/lookup?locations=';
 	        let ans=execSync(url+latitude+','+longitude);
 		res=JSON.parse(ans);
 	    }

@@ -30,7 +30,7 @@ if(process.argv[2]){
     maxDist=process.argv[2];
     if(maxDist<1.0)maxDist=1.0;
 }else{
-    maxDist=2.0;
+    maxDist=1.0;
 }
 
 process.stderr.write('\nmax_dist='+maxDist+'m\t(ändern mit \"gedit Makefile\")\n\n');
@@ -55,8 +55,8 @@ function addMeta(geodata){
 	
 	let item=project[i];
 	
-        let laenge=item['Lat-WGS84']+'';
-	let breite=item['Lon-WGS84']+'';
+        let laenge=item.Lat-WGS84;
+	let breite=item.Lon-WGS84;
 	let Gemeinde=item.Ort;
 	let Gebiet=item.Gebiet;
         let fehlend=item.Verluste_Erklaerung;	
@@ -69,7 +69,7 @@ function addMeta(geodata){
 	
 	let query="select id, latitude, longitude, (longitude - :lon)*(longitude - :lon)+(latitude - :lat)*(latitude - :lat) as dist from trees where dist != 'null' and dist >= 0.0  order by dist limit 1"
 	
-        let cmd='sqlite-utils query ./tmp/triage.sqlite \"'+query+'\" -p lon '+laenge+' -p lat '+breite;
+        let cmd='sqlite-utils query ./../openstreetmap/datasette/sorbusdomestica.sqlite \"'+query+'\" -p lon '+laenge+' -p lat '+breite;
 
 	let dist;
 	
@@ -120,30 +120,19 @@ function addMeta(geodata){
 		ans=[ { id: "", latitude: -999.9, longitude: -999.9, dist: -999.9 } ];
 	    }
 
-	    if(dist<maxDist){
-		//		if(project[i]['Node']=''){
-		
-//		    project[i]['Node_Martin']=project[i]['Node']
-		    project[i]['Node']=ans[0].id;
-//		}else{
-//		    if(project[i]['Node']!=ans[0].id){
-//			process.stderr.write("Warnug: "+place+' ==> die ID sind verschieden!\n');
-//		    }
-		    //project[i]['Node']=ans[0].id;
-//		}
-	    }		 			 
-	    //project[i]['_osmid']=ans[0].id;
-	    //project[i]['plantation_year']='';
-	    //project[i]['hash']=hash;
+			 			 
+	    project[i]['osmid']=ans[0].id;
+	    project[i]['plantation_year']='';
+	    project[i]['hash']=hash;
 	    //project[i]['autochton']=autochton;
-	    //project[i]['natural']=natural;
-	    project[i]['_latitude']=ans[0].latitude;
-	    project[i]['_longitude']=ans[0].longitude;
-	    project[i]['_dist']=ans[0].dist;
+	    ||project[i]['natural']=natural;
+	    project[i]['latitude']=ans[0].latitude;
+	    project[i]['longitude']=ans[0].longitude;
+	    project[i]['dist']=ans[0].dist;
 	    
         }else{
 	    project.splice(i,1);
-	    //process.stderr.write('     leere zeile gelöscht\n')
+	    process.stderr.write('     leere zeile gelöscht\n')
 	}
     }
 

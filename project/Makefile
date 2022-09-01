@@ -1,50 +1,37 @@
-# set this to the ods-file name (without .ods). This example is for "projekt.ods"
-file:=projekt
+projekt=projekt
+dist:=1
 
-#set to max allowed dinstance in [m]
-max_dist:=10.0
+# json to ods
+$(projekt)-neu.ods: tmp/$(projekt)-neu.json
+	cat ./tmp/$(projekt)-neu.json | sqlite-utils memory - "select  * from stdin" --csv > $(projekt)-neu.csv.tmp
+	mv $(projekt)-neu.csv.tmp ./tmp/$(projekt)-neu.csv
+	soffice --convert-to ods ./tmp/$(projekt)-neu.csv --headless
+#	rm $(file)-draft.csv
 
+.PHONY: check
+check: tmp/$(projekt).json tmp/triage.sqlite
+	cat ./tmp/$(projekt).json | ./bin/check-and-add-osmid.js $(dist) > /dev/null
 
-
-
-#do not touch below this
-osm:=../openstreetmap
-datasette:=$(osm)/datasette
-
-check: $(file).json ./$(datasette)/sorbusdomestica.sqlite ./bin/check-and-add-osmid.js
-	@echo make check $(file).ods
-	@cat $(file).json | node ./bin/check-and-add-osmid.js $(max_dist) > /dev/null
-
-draft: $(file)-draft.csv 
-
-osm:
-	@echo update data from osm
-	@rm ./$(osm)/cache/sorbus+045+005.json
-	@./../$(osm)/bin/query-all-sorbus.sh
-	@cat ./$(osm)/sorbusdomestica.geojson | node ./$(datasette)/bin/prepare-datasette.js > ./$(datasette)/sorbusdomestica.json.tmp
-	@mv ./$(datasette)/sorbusdomestica.json.tmp ./$(datasette)/sorbusdomestica.json
-	@sqlite-utils insert ./$(datasette)/sorbusdomestica.sqlite trees ./$(datasette)/sorbusdomestica.json --pk=id --alter  --truncate
+# check and add
+tmp/$(projekt)-neu.json: tmp/$(projekt).json tmp/triage.sqlite
+	cat ./tmp/$(projekt).json | ./bin/check-and-add-osmid.js $(dist) > ./tmp/$(projekt)-neu.json 
 
 
-# helper
-$(file).json: $(file).ods
-	@echo make $(file).json
-	@soffice --convert-to csv $(file).ods --headless
-#	csv2json $(file).csv | jq . | sed -e 's/\\n/ /g' | jq . > $(file).json
-	@sqlite-utils memory $(file).csv "select * from $(file)" | jq . | sed -e 's/\\n/ /g'| jq .  > $(file).json.tmp
-	@mv $(file).json.tmp $(file).json
-	@rm $(file).csv
 
-$(file)-draft.json: $(file).json  ./$(datasette)/sorbusdomestica.sqlite ./bin/check-and-add-osmid.js
-	@echo make $(file)-draft.json
-	@cat $(file).json | node ./bin/check-and-add-osmid.js $(max_dist) > $(file)-draft.json.tmp
-	@mv $(file)-draft.json.tmp $(file)-draft.json
+# ods to json
+tmp/$(projekt).json: $(projekt).ods
+	soffice --headless --convert-to csv $(projekt).ods 
+	csv2json    ./$(projekt).csv | sed -e 's/\\n/ /g'| jq . > ./tmp/$(projekt).json
+	rm ./$(projekt).csv
+#	sqlite-utils memory $(projekt).csv "select * from $(projekt)" | jq . | sed -e 's/\\n/ /g'| jq .  > $(projekt).json.tmp
+#	mv $(projekt).json.tmp ./tmp/$(projekt).json
 
-$(file)-draft.csv: $(file)-draft.json
-	@echo make $(file)-draft.csv
-	@cat $(file)-draft.json | sqlite-utils memory - "select  * from stdin" --csv > $(file)-draft.csv.tmp
-	@mv $(file)-draft.csv.tmp $(file)-draft.csv
-#	@soffice --convert-to ods $(file)-draft.csv --headless
-#	@rm $(file)-draft.csv
 
+
+
+tmp/triage.sqlite: tmp/sorbusdomestica.geojson
+	cat ./tmp/sorbusdomestica.geojson | ./bin/triage.js | sqlite-utils insert --truncate ./tmp/triage.sqlite trees -
+
+tmp/sorbusdomestica.geojson:
+	wget -O ./tmp/sorbusdomestica.geojson "https://speierling.arglos.ch/gis/site/sorbusdomestica.geojson"
 
